@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Employee Management</title>
+    <link rel="stylesheet" href="employee.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Employee Management</h1>
+        <!-- <button onclick="logout()">Logout</button> -->
+        <div class="buttons">
+            <button id="addEmployeeBtn">Add Employee</button>
+            <button id="updateEmployeeBtn">Update Employee</button>
+            <button id="deleteEmployeeBtn">Delete Employee</button>
+            <button id="findEmployeeBtn">Find Employee</button>
+            <button id="fetchAllEmployeesBtn" onclick="fetchAllEmployees()">Fetch All Employees</button>
+        </div>
+
+        <div id="formContainer">
+            <!-- Add Employee Form -->
+            <div id="addEmployeeForm" class="form">
+                <h2>Add Employee</h2>
+                <form id="addEmployeeFormFields">
+                    <input type="text" id="addEmployeeName" placeholder="Employee Name" required />
+                    <div id="addEmployeeNameError" class="error-message"></div>
+
+                    <input type="email" id="addEmployeeEmail" placeholder="Employee Email" required />
+                    <div id="addEmployeeEmailError" class="error-message"></div>
+
+                    <input type="text" id="addEmployeePhone" placeholder="Phone Number (+123-456789)" required />
+                    <div id="addEmployeePhoneError" class="error-message"></div>
+
+                    <input type="text" id="addEmployeeAddress" placeholder="Address" />
+                    <div id="addEmployeeAddressError" class="error-message"></div>
+
+                    <input type="text" id="addEmployeeDepartment" placeholder="Department" required />
+                    <div id="addEmployeeDepartmentError" class="error-message"></div>
+
+                    <input type="date" id="addEmployeeJoinDate" required />
+                    <div id="addEmployeeJoinDateError" class="error-message"></div>
+
+                    <button type="button" onclick="addEmployee()">Add Employee</button>
+                </form>
+            </div>
+
+            <!-- Update Employee Form -->
+            <div id="updateEmployeeForm" class="form">
+                <h2>Update Employee</h2>
+                <form id="updateEmployeeFormFields">
+                    <input type="number" id="updateEmployeeId" placeholder="Employee ID" required />
+                    <div id="updateEmployeeIdError" class="error-message"></div>
+
+                    <input type="text" id="updateEmployeeName" placeholder="Employee Name" required />
+                    <div id="updateEmployeeNameError" class="error-message"></div>
+
+                    <input type="email" id="updateEmployeeEmail" placeholder="Employee Email" required />
+                    <div id="updateEmployeeEmailError" class="error-message"></div>
+
+                    <input type="text" id="updateEmployeePhone" placeholder="Phone Number (+123-456789)" required />
+                    <div id="updateEmployeePhoneError" class="error-message"></div>
+
+                    <input type="text" id="updateEmployeeAddress" placeholder="Address" />
+                    <div id="updateEmployeeAddressError" class="error-message"></div>
+
+                    <input type="text" id="updateEmployeeDepartment" placeholder="Department" required />
+                    <div id="updateEmployeeDepartmentError" class="error-message"></div>
+
+                    <input type="date" id="updateEmployeeJoinDate" required />
+                    <div id="updateEmployeeJoinDateError" class="error-message"></div>
+
+                    <button type="button" onclick="updateEmployee()">Update Employee</button>
+                </form>
+            </div>
+
+            <!-- Delete Employee Form -->
+            <div id="deleteEmployeeForm" class="form">
+                <h2>Delete Employee</h2>
+                <input type="number" id="deleteEmployeeId" placeholder="Employee ID" required />
+                <button onclick="deleteEmployee()">Delete Employee</button>
+            </div>
+
+            <!-- Find Employee Form -->
+            <div id="findEmployeeForm" class="form">
+                <h2>Find Employee</h2>
+
+                <!-- Find by ID -->
+                <div>
+                    <label for="findEmployeeId">Find by Employee ID:</label>
+                    <input type="number" id="findEmployeeId" placeholder="Employee ID" />
+                    <button onclick="findEmployeeById()">Find by ID</button>
+                </div>
+                <div id="findEmployeeIdError" class="error-message"></div>
+
+                <!-- Find by Name -->
+                <div>
+                    <label for="findEmployeeName">Find by Employee Name:</label>
+                    <input type="text" id="findEmployeeName" placeholder="Employee Name" />
+                    <button onclick="findEmployeeByName()">Find by Name</button>
+                </div>
+                <div id="findEmployeeNameError" class="error-message"></div>
+
+                <!-- Find by Department -->
+                <div>
+                    <label for="findEmployeeDepartment">Find by Department:</label>
+                    <input type="text" id="findEmployeeDepartment" placeholder="Department" />
+                    <button onclick="findEmployeeByDepartment()">Find by Department</button>
+                </div>
+                <div id="findEmployeeDepartmentError" class="error-message"></div>
+
+                <!-- Employee Details -->
+                <div id="employeeDetails">
+                    <!-- Display employee details here -->
+                </div>
+            </div>
+
+            <!-- Fetch All Employees Form -->
+            <div id="fetchAllEmployeesForm" class="form">
+                <h2>All Employees</h2>
+                <div id="allEmployeesList">
+                    <!-- Employee list will be populated here -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="employee.js"></script>
+</body>
+</html>
